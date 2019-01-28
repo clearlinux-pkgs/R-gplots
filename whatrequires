@@ -1,5 +1,5 @@
 # This file contains recursive sources that require this package
-R-DendSer
+R-PerformanceAnalytics
 R-ROCR
 R-dendextend
 R-seriation
