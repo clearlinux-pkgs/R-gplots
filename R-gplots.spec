@@ -4,15 +4,14 @@
 #
 Name     : R-gplots
 Version  : 3.0.1.1
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/gplots_3.0.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gplots_3.0.1.1.tar.gz
 Summary  : Various R Programming Tools for Plotting Data
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-caTools
-Requires: R-gdata
-Requires: R-gtools
+Requires: R-bitops
+BuildRequires : R-bitops
 BuildRequires : R-caTools
 BuildRequires : R-gdata
 BuildRequires : R-gtools
@@ -37,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1548645845
+export SOURCE_DATE_EPOCH=1552835778
 
 %install
-export SOURCE_DATE_EPOCH=1548645845
+export SOURCE_DATE_EPOCH=1552835778
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -76,8 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library gplots|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  gplots || :
 
 
 %files
@@ -112,3 +110,9 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/gplots/help/paths.rds
 /usr/lib64/R/library/gplots/html/00Index.html
 /usr/lib64/R/library/gplots/html/R.css
+/usr/lib64/R/library/gplots/tests/dat.csv
+/usr/lib64/R/library/gplots/tests/heatmap2Test.R
+/usr/lib64/R/library/gplots/tests/heatmap2Test.Rout.save
+/usr/lib64/R/library/gplots/tests/heatmap_to_heatmap.2_test.R
+/usr/lib64/R/library/gplots/tests/plotmeans_nobars.R
+/usr/lib64/R/library/gplots/tests/test_plottingDeepDendrogram.R
