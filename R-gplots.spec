@@ -4,7 +4,7 @@
 #
 Name     : R-gplots
 Version  : 3.0.3
-Release  : 30
+Release  : 31
 URL      : https://cran.r-project.org/src/contrib/gplots_3.0.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gplots_3.0.3.tar.gz
 Summary  : Various R Programming Tools for Plotting Data
